@@ -4,14 +4,19 @@ gem 'rails', '3.2.3'
 
 gem 'sqlite3'
 gem 'high_voltage'
+gem 'dynamic_form'
 
 group :development do
   gem 'guard-spork'
 end
 
-group :test do
+group :test, :development do
   gem 'rspec-rails'
+end
+
+group :test do
   gem 'cucumber-rails', require: false
+  gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'spork-rails'
 end

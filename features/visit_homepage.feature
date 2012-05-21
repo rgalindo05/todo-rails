@@ -3,7 +3,7 @@
 Feature: Visit the homepage
   In order to make an informed decision about signing up
   As a guest
-  I want (I should be able) to read information about the site
+  I should be able to read information about the site
 
   Scenario: Guest visits the homepage
     When I view the homepage
