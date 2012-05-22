@@ -12,4 +12,4 @@ Scenario: User creates an invalid todo
   Given I have signed in
   When I create an invalid todo
   Then I should see an error message
-  #And I should have no todos
+  And I should have no todos

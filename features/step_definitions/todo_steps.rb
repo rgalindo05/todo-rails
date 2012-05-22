@@ -18,6 +18,7 @@ Then /^I should have (\d+) todos?$/ do |todo_count|
 end
 
 Then /^I should have no todos?$/ do
+  visit todos_path
   within 'ul#incomplete-todos' do
     page.should have_no_css('li')
   end
