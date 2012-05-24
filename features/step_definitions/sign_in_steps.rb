@@ -14,7 +14,7 @@ Then /^I should be prompted to sign in$/ do
 end
 
 Then /^I should see that I have signed in as "(.*?)"$/ do |email_address|
-  within 'header' do
+  within '.navbar' do
     page.should have_css("[data-current-user='#{email_address}']")
   end
 
