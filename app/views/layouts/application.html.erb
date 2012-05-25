@@ -15,14 +15,7 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <%= link_to 'Todos', root_path, class: 'brand' %>
-          <p class="navbar-text" data-current-user="<%= current_user.email %>"><%= current_user.email %></p>
-        </div>
-      </div>
-    </div>
+    <%= yield :header %>
 
     <div class="container">
       <div class="content">
@@ -33,13 +26,10 @@
         <%= yield %>
 
       </div><!--/content-->
-
-      <footer>
-        <p>&copy; Steve McKinney 2012</p>
-      </footer>
-
     </div> <!-- /container -->
 
+    <%= yield :footer %>
+ 
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

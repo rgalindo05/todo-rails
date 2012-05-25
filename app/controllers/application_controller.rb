@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
     session[:email] = email_address
   end
 
+  def sign_out_user
+    session[:email] = nil
+  end
+
   def authenticate
     unless current_user.signed_in?
       redirect_to root_path, notice: 'Please sign in'
