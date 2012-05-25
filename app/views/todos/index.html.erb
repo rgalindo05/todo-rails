@@ -1,7 +1,7 @@
 <%= link_to 'Create a new todo', new_todo_path %>
 
 <ul id='incomplete-todos'>
-  <%= @incomplete_todos.each do |todo| %>
+  <% @incomplete_todos.each do |todo| %>
     <li id="<%= dom_id(todo) %>">
       <%= todo.name %>
       <%= link_to 'complete', todo_completions_path(todo), method: 'post', class: 'complete' %>
@@ -10,7 +10,7 @@
 </ul>
 
 <ul id='complete-todos'>
-  <%= @complete_todos.each do |todo| %>
+  <% @complete_todos.each do |todo| %>
     <li id="<%= dom_id(todo) %>">
       <%= todo.name %>
     </li>
