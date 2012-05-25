@@ -1,7 +1,10 @@
-<p data-role='description'>This is the best todo app ever</p>
+<div class='hero-unit'>
+  <h1 data-role='title'>Todos</h1>
+  <p data-role='description'>Setup tasks. Get things done!</p>
+  <%= form_for :session, url: sessions_path, :html => {class: 'form-inline'} do |form|  %>
+    <%= form.label :email, class: 'obscure' %>
+    <%= form.text_field :email, placeholder: 'email@address.com' %>
+    <%= form.submit 'Sign in ', class: 'btn btn-primary' %>
+  <% end %>
+</div>
 
-<%= form_for :session, url: sessions_path do |form|  %>
-  <%= form.label :email %>
-  <%= form.text_field :email %>
-  <%= form.submit 'Sign in ' %>
-<% end %>
