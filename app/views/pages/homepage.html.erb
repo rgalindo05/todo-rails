@@ -3,7 +3,7 @@
   <p data-role='description'>Setup tasks. Get things done!</p>
   <%= form_for :session, url: sessions_path, :html => {class: 'form-inline'} do |form|  %>
     <%= form.label :email, class: 'obscure' %>
-    <%= form.text_field :email, placeholder: 'email@address.com' %>
+    <%= form.text_field :email, placeholder: 'email@address.com', autofocus: 'autofocus' %>
     <%= form.submit 'Sign in ', class: 'btn btn-primary' %>
   <% end %>
 </div>
