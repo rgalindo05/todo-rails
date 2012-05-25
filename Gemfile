@@ -4,7 +4,6 @@ gem 'rails', '3.2.3'
 
 gem 'sqlite3'
 gem 'high_voltage'
-gem 'dynamic_form'
 
 group :development do
   gem 'guard-spork'

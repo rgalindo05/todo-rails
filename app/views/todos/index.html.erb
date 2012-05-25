@@ -1,5 +1,3 @@
-<%= link_to 'Create a new todo', new_todo_path %>
-
 <ul id='incomplete-todos'>
   <% @incomplete_todos.each do |todo| %>
     <li id="<%= dom_id(todo) %>">
@@ -8,6 +6,17 @@
     </li>
   <% end %>
 </ul>
+
+<%= form_for @todo, :html => {class: 'form-inline'} do |form| %>
+  <% @todo.errors.full_messages.each do |message| %>
+  <div class='alert alert-error'>
+    <strong>Ooops!</strong> <%= message %>
+  </div>
+  <% end %>
+  <%= form.label :name, 'New Task', class: 'obscure' %>
+  <%= form.text_field :name, autofocus: 'autofocus' %>
+  <%= form.submit 'Add Task', class: 'btn btn-primary' %>
+<% end %>
 
 <ul id='complete-todos'>
   <% @complete_todos.each do |todo| %>

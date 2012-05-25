@@ -2,12 +2,9 @@ class TodosController < ApplicationController
   before_filter :authenticate
 
   def index
+    @todo = Todo.new
     @incomplete_todos = current_user.todos.incomplete
     @complete_todos = current_user.todos.complete
-  end
-
-  def new
-    @todo = Todo.new
   end
 
   def create
@@ -16,7 +13,9 @@ class TodosController < ApplicationController
     if @todo.save
       redirect_to todos_path
     else
-      render :new
+      @incomplete_todos = current_user.todos.incomplete
+      @complete_todos = current_user.todos.complete
+      render :index
     end
   end
 end
