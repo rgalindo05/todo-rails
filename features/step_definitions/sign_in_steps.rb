@@ -18,5 +18,5 @@ Then /^I should see that I have signed in as "(.*?)"$/ do |email_address|
     page.should have_css("[data-current-user='#{email_address}']")
   end
 
-  page.should have_css('h1', text: /todo/i)
+  page.should have_css('.brand', text: /todo/i)
 end

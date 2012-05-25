@@ -42,3 +42,7 @@ end
 Then /^my list of complete todos should be:$/ do |table|
   ensure_complete_todos_named table
 end
+
+Then /^I should be able to view my todos$/ do
+  step %{I should see that I have signed in as "steve@example.com"}
+end
