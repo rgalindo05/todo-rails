@@ -20,7 +20,7 @@
     <div class="container">
       <div class="content">
         <% flash.keys.each do |key| %>
-          <%= content_tag :div, flash[key], class: "#{key} flash" %>
+          <%= content_tag :div, flash[key], class: "#{key} alert alert-error" %>
         <% end %>
 
         <%= yield %>

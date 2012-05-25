@@ -9,7 +9,7 @@ When /^I sign in as "(.*?)"$/ do |email_address|
 end
 
 Then /^I should be prompted to sign in$/ do
-  page.should have_css('.flash.notice', text: 'Please sign in')
+  page.should have_css('.alert.notice', text: 'Please sign in.')
   page.should have_css("form[action='#{sessions_path}']")
 end
 
