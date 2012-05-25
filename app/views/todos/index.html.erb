@@ -1,13 +1,13 @@
-<ul id='incomplete-todos'>
+<ul id='incomplete-todos' class='todo-list'>
   <% @incomplete_todos.each do |todo| %>
     <li id="<%= dom_id(todo) %>">
+      <%= link_to 'complete', todo_completions_path(todo), method: 'post', class: 'check complete' %>
       <%= todo.name %>
-      <%= link_to 'complete', todo_completions_path(todo), method: 'post', class: 'complete' %>
     </li>
   <% end %>
 </ul>
 
-<%= form_for @todo, :html => {class: 'form-inline'} do |form| %>
+<%= form_for @todo, :html => {class: 'well form-inline'} do |form| %>
   <% @todo.errors.full_messages.each do |message| %>
   <div class='alert alert-error'>
     <strong>Ooops!</strong> <%= message %>
@@ -15,10 +15,10 @@
   <% end %>
   <%= form.label :name, 'New Task', class: 'obscure' %>
   <%= form.text_field :name, autofocus: 'autofocus' %>
-  <%= form.submit 'Add Task', class: 'btn btn-primary' %>
+  <%= form.submit 'Add Task', class: 'btn btn-primary btn-large' %>
 <% end %>
 
-<ul id='complete-todos'>
+<ul id='complete-todos' class='todo-list'>
   <% @complete_todos.each do |todo| %>
     <li id="<%= dom_id(todo) %>">
       <%= todo.name %>
