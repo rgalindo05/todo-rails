@@ -10,7 +10,7 @@ Feature: Complete a todo
       | Buy milk  |
       | Buy eggs  |
       | Buy flour |
-    When I mark the todo "Buy flour" as completed
+    When I mark the todo "Buy flour" as complete
     Then my list of incomplete todos should be:
       | name      |
       | Buy milk  |

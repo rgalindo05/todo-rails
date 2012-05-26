@@ -1,7 +1,7 @@
 <ul id='incomplete-todos' class='todo-list'>
   <% @incomplete_todos.each do |todo| %>
     <li id="<%= dom_id(todo) %>">
-      <%= link_to 'complete', todo_completions_path(todo), method: 'post', class: 'check complete' %>
+      <%= link_to 'complete', todo_completions_path(todo), method: :post, class: 'check complete' %>
       <%= todo.name %>
     </li>
   <% end %>
@@ -21,6 +21,7 @@
 <ul id='complete-todos' class='todo-list'>
   <% @complete_todos.each do |todo| %>
     <li id="<%= dom_id(todo) %>">
+      <%= link_to 'incomplete', todo_completions_path(todo), method: :delete, class: 'check incomplete' %>
       <%= todo.name %>
     </li>
   <% end %>

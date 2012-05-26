@@ -4,6 +4,13 @@ Given /^I have the following todos:$/ do |table|
   end
 end
 
+Given /^I have the following complete todos:$/ do |table|
+  table.hashes.each do |row|
+    create_todo_named row[:name]
+    step %{I mark the todo "#{row[:name]}" as complete}
+  end
+end
+
 When /^create a todo$/ do
   create_todo_named 'Remember the milk'
 end
@@ -16,9 +23,14 @@ When /^I view my todos$/ do
   visit todos_path
 end
 
-When /^I mark the todo "(.*?)" as completed$/ do |todo_name|
+When /^I mark the todo "(.*?)" as complete$/ do |todo_name|
   todo = Todo.where(name: todo_name).first
   find("##{dom_id(todo)} a.complete").click
+end
+
+When /^I mark the todo "(.*?)" as incomplete$/ do |todo_name|
+  todo = Todo.where(name: todo_name).first
+  find("##{dom_id(todo)} a.incomplete").click
 end
 
 Then /^I should be able to view my todos$/ do
@@ -46,4 +58,3 @@ Then /^I should have no todos?$/ do
     page.should have_no_css('li')
   end
 end
-
