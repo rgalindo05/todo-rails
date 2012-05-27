@@ -4,6 +4,8 @@ gem 'rails', '3.2.3'
 
 gem 'pg'
 gem 'high_voltage'
+gem 'jquery-rails'
+gem 'twitter-bootstrap-rails'
 
 group :development do
   gem 'guard-spork'
@@ -21,6 +23,10 @@ group :test do
   gem 'spork-rails'
 end
 
+group :production do
+  gem 'thin'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -28,6 +34,3 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
-gem 'twitter-bootstrap-rails'
