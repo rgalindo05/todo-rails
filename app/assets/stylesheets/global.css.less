@@ -92,7 +92,12 @@ ul#complete-todos li {
 
 /* Media Queries */
 
-// Landscape phones and down
+// Portrait tablet and desktop
+@media (max-width: 979px) {
+  body#homepage { padding-top: 20px; }
+}
+
+// Screen width is smaller than our set width
 @media (max-width: 600px) {
   .navbar { .navbar-inner .container { width: auto; } }
   body .container { width: auto; }
@@ -100,11 +105,24 @@ ul#complete-todos li {
     .mobile-spacing;
     input#todo_name {
       width: 100%;
+      margin-bottom: 9px;
     }
     input.btn {
       float: none;
-      margin-top: 9px;
     }
   }
   ul.todo-list { .mobile-spacing; }
+}
+
+// Landscape phones and down
+@media (max-width: 480px) {
+  body#homepage {
+    padding-top: 10px;
+    .hero-unit {
+      padding: 20px 20px;
+      input[type=email] {
+        width: 130px;
+      }
+    }
+  }
 }
