@@ -6,6 +6,7 @@ gem 'pg'
 gem 'high_voltage'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
+gem 'best_in_place'
 
 group :development do
   gem 'guard-spork'
@@ -21,6 +22,8 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'spork-rails'
+  gem 'capybara-webkit'
+  gem 'launchy'
 end
 
 group :production do

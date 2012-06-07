@@ -33,6 +33,11 @@ When /^I mark the todo "(.*?)" as incomplete$/ do |todo_name|
   find("##{dom_id(todo)} a.incomplete").click
 end
 
+When /^I update the todo "(.*?)" to "(.*?)"$/ do |old_todo_name, new_todo_name|
+  todo = Todo.where(name: old_todo_name).first
+  bip_text todo, :name, new_todo_name
+end
+
 Then /^I should be able to view my todos$/ do
   step %{I should see that I have signed in as "steve@example.com"}
 end
@@ -57,4 +62,8 @@ Then /^I should have no todos?$/ do
   within 'ul#incomplete-todos' do
     page.should have_no_css('li')
   end
+end
+
+Then /^I should see a todo error$/ do
+  page.should have_css('.flash-error', text: 'Name can\'t be blank')
 end

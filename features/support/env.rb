@@ -8,10 +8,12 @@ Spork.prefork do
   # if you change any configuration or code from libraries loaded here, you'll
   # need to restart spork for it take effect.
   require 'cucumber/rails'
+  Capybara.javascript_driver = :webkit
   Capybara.default_selector = :css
   ActionController::Base.allow_rescue = false
   DatabaseCleaner.strategy = :transaction
   Cucumber::Rails::Database.javascript_strategy = :truncation
+  World(BestInPlace::TestHelpers)
 end
 
 Spork.each_run do

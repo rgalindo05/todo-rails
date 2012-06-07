@@ -18,4 +18,13 @@ class TodosController < ApplicationController
       render :index
     end
   end
+
+  def update
+    @todo= Todo.find params[:id]
+    @todo.update_attributes(params[:todo])
+
+    respond_to do |format|
+      format.json { respond_with_bip(@todo) }
+    end
+  end
 end

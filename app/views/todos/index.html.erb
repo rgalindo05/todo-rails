@@ -2,7 +2,7 @@
   <% @incomplete_todos.each do |todo| %>
     <li id="<%= dom_id(todo) %>">
       <%= link_to 'complete', todo_completions_path(todo), method: :post, class: 'check complete' %>
-      <%= todo.name %>
+      <%= best_in_place todo, :name %>
     </li>
   <% end %>
 </ul>
