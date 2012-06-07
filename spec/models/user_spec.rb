@@ -3,15 +3,15 @@ require 'spec_helper'
 describe User do
   context '#email' do
     it 'has the email it was instantiated with' do
-      user_with_email = User.new('dude@example.com')
-      user_with_email.email.should == 'dude@example.com'
+      user_with_email = User.new('steve@example.com')
+      user_with_email.email.should == 'steve@example.com'
     end
   end
 
   context '#todos' do
     it 'returns only todos belonging to the user' do
-      current_user = User.new('dude@example.com')
-      different_user = User.new('different@example.com')
+      current_user = User.new('steve@example.com')
+      different_user = User.new('fakesteve@example.com')
       Todo.create(name: 'Todo 1', user: current_user)
       Todo.create(name: 'Todo 2', user: current_user)
       Todo.create(name: 'Todo 3', user: different_user)
@@ -21,7 +21,7 @@ describe User do
 
   context 'signed_in?' do
     it 'is true' do
-      user = User.new('dude@example.com')
+      user = User.new('steve@example.com')
       user.should be_signed_in
     end
   end
