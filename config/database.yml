@@ -1,23 +1,15 @@
 development:
   adapter: postgresql
   database: todos_development
-  username: todos
-  password: todos
   host: localhost
 
 test: &test
   adapter: postgresql
   database: todos_test
-  username: todos
-  password: todos
   host: localhost
 
 #production:
-  #adapter: postgresql
-  #database: todos_production
-  #username: todos
-  #password: todos
-  #host: heroku.is.magic
+  #heroku handles production db magically
 
 cucumber:
   <<: *test
