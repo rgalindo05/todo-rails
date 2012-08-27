@@ -7,7 +7,7 @@
   <% end %>
 </ul>
 
-<%= form_for @todo, :html => {class: 'well form-inline'} do |form| %>
+<%= form_for @todo, html: {class: 'well form-inline'} do |form| %>
   <% @todo.errors.full_messages.each do |message| %>
   <div class='alert alert-error'>
     <strong>Ooops!</strong> <%= message %>
