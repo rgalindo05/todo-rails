@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+#ruby '1.9.3'
 
 gem 'rails', '3.2.8'
 
@@ -20,7 +20,7 @@ group :test, :development do
 end
 
 group :test do
- # gem 'cucumber-rails', require: false
+  gem 'cucumber-rails', :require => false
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
