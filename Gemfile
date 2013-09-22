@@ -9,6 +9,7 @@ gem 'high_voltage'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails', '2.0.8'
 gem 'best_in_place'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'guard-spork'
