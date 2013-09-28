@@ -1,7 +1,7 @@
 <% content_for :body_id, 'homepage' %>
 
 <div class='hero-unit'>
-  <h1 data-role='title'>Todos</h1>
+  <h1 data-role='title'>Your Todos</h1>
   <p data-role='description'>Setup tasks. Get things done!</p>
   <%= form_for :session, url: sessions_path, html: {class: 'form-inline'} do |form|  %>
     <%= form.label :email, class: 'obscure' %>
